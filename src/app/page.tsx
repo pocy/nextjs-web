@@ -48,15 +48,10 @@ export default function PasswordGenerator() {
     }
   }
 
-  // 初始生成密码
+  // 当设置改变时生成密码（包括初始化）
   useEffect(() => {
     generatePassword()
-  }, [])
-
-  // 当设置改变时重新生成密码
-  useEffect(() => {
-    generatePassword()
-  }, [generatePassword])
+  }, [length, includeUppercase, includeLowercase, includeNumbers, includeSymbols, generatePassword])
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 p-4">
